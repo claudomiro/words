@@ -1,5 +1,8 @@
 package org.claudomiro.tdd.words;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class WordConverter {
 
     private final UnitMap unitMap;
@@ -13,10 +16,26 @@ public class WordConverter {
 
     public String conv(int integer)
     {
-        if(unitMap.contains(integer))
-        {
-            return unitMap.wordRepresentation(integer);
+        int dezenas = integer /10 * 10;
+        if(dezenas == 10) {
+            dezenas = 0;
         }
-        return tensMap.wordRepresentation(integer);
+        int unidades = integer -dezenas;
+
+        List<String> result = new ArrayList<>();
+        if(tensMap.contains(dezenas))
+        {
+            result.add(tensMap.wordRepresentation(dezenas));
+        }
+        if(unitMap.contains(unidades))
+        {
+            final String wordRepresentation = unitMap.wordRepresentation(unidades);
+            if(result.isEmpty()) {
+                result.add(wordRepresentation);
+            } else if(unidades != 0) {
+                result.add(wordRepresentation);
+            }
+        }
+        return String.join(" e ", result);
     }
 }

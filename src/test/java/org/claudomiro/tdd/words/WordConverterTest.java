@@ -34,4 +34,12 @@ public class WordConverterTest
         assertThat(converter.conv(50), equalTo("cinquenta"));
         assertThat(converter.conv(90), equalTo("noventa"));
     }
+
+    @Test
+    public void whenMixedValueReturnWords()
+    {
+        assertThat(converter.conv(25), equalTo("vinte e cinco"));
+        assertThat(converter.conv(42), equalTo("quarenta e dois"));
+        assertThat(converter.conv(98), equalTo("noventa e oito"));
+    }
 }
