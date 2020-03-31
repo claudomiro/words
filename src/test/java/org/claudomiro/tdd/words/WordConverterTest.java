@@ -26,4 +26,12 @@ public class WordConverterTest
         assertThat(converter.conv(10), equalTo("dez"));
         assertThat(converter.conv(19), equalTo("dezenove"));
     }
+
+    @Test
+    public void whenTenFoldReturnWord()
+    {
+        assertThat(converter.conv(20), equalTo("vinte"));
+        assertThat(converter.conv(50), equalTo("cinquenta"));
+        assertThat(converter.conv(90), equalTo("noventa"));
+    }
 }
