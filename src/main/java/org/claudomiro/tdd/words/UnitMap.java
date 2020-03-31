@@ -13,8 +13,11 @@ public class UnitMap
         initMap();
     }
 
-    public String get(Object o) {
-        return units.get(o);
+    public String getwordRepresentation(Integer number) {
+        if(!units.containsKey(number)) {
+            throw new IllegalArgumentException(String.format("Number %d is not unit", number));
+        }
+        return units.get(number);
     }
 
     private void initMap() {

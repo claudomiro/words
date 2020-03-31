@@ -1,8 +1,5 @@
 package org.claudomiro.tdd.words;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class WordConverter {
 
     private final UnitMap unitMap;
@@ -13,7 +10,7 @@ public class WordConverter {
 
     public String conv(int integer)
     {
-        return unitMap.get(integer);
+        return unitMap.getwordRepresentation(integer);
     }
 
 }
