@@ -13,8 +13,8 @@ public class UnitMap
         initMap();
     }
 
-    public String get(Object object) {
-        return units.get(object);
+    public String get(Object o) {
+        return units.get(o);
     }
 
     private void initMap() {
