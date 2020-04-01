@@ -27,6 +27,15 @@ public class CurrencyConverterTest
         assertThat(conversor.conv(30.00), equalTo("trinta reais"));
         assertThat(conversor.conv(55.00), equalTo("cinquenta e cinco reais"));
         assertThat(conversor.conv(97.00), equalTo("noventa e sete reais"));
+    }
 
+    @Test
+    public void whenJustCentsReturnWords() {
+        assertThat(conversor.conv(0.02), equalTo("dois centavos"));
+        assertThat(conversor.conv(0.03), equalTo("três centavos"));
+        assertThat(conversor.conv(0.10), equalTo("dez centavos"));
+        assertThat(conversor.conv(0.30), equalTo("trinta centavos"));
+        assertThat(conversor.conv(0.55), equalTo("cinquenta e cinco centavos"));
+        assertThat(conversor.conv(0.97), equalTo("noventa e sete centavos"));
     }
 }
