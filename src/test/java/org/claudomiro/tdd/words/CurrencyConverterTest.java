@@ -19,7 +19,7 @@ public class CurrencyConverterTest
     }
 
     @Test
-    public void quandoOValorForSimplesRetornaONumeroPorExtenso()
+    public void whenSimpleValueReturnWords()
     {
         assertThat(conversor.conv(2.00), equalTo("dois reais"));
         assertThat(conversor.conv(3.00), equalTo("três reais"));
