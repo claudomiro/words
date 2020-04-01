@@ -36,6 +36,10 @@ public class WordConverter {
 
     public String conv(int value)
     {
+        if(value < 0 || value > 99)
+        {
+            throw new IllegalArgumentException(String.format("Don't know how to convert '%d'", value));
+        }
         if(isException(value))
         {
             return exceptionMap.get(value);
