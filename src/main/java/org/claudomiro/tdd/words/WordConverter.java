@@ -36,7 +36,7 @@ public class WordConverter {
 
     private boolean isException(int value)
     {
-        return exceptionMap.get(value) != null;
+        return exceptionMap.containsKey(value);
     }
 
     public String conv(int value)
