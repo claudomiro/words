@@ -1,5 +1,7 @@
 package org.claudomiro.tdd.words;
 
+import static org.claudomiro.tdd.words.PortugueseConstants.*;
+
 public class CurrencyConverter
 {
     private final IntegerConverter integerConverter;
@@ -11,11 +13,11 @@ public class CurrencyConverter
     public String conv(double currencyValue)
     {
         int integerValue = (int) currencyValue;
-        int centsValue = (int) ((currencyValue - integerValue) *  100.00);
+        int centsValue = (int) ((currencyValue - integerValue) * ONE_HUNDRED);
 
         if(centsValue == 0) {
-            return integerConverter.conv(integerValue) + " reais";
+            return integerConverter.conv(integerValue) + SPACE + CURRENCY;
         }
-        return integerConverter.conv(centsValue) + " centavos";
+        return integerConverter.conv(centsValue) + SPACE + CENTS;
     }
 }
