@@ -34,11 +34,6 @@ public class WordConverter {
         exceptionMap.put(19, "dezenove");
     }
 
-    private boolean isException(int value)
-    {
-        return exceptionMap.containsKey(value);
-    }
-
     public String conv(int value)
     {
         if(isException(value))
@@ -69,6 +64,11 @@ public class WordConverter {
                 result.add(unitMap.wordRepresentation(units));
         }
         return String.join(" e ", result);
+    }
+
+    private boolean isException(int value)
+    {
+        return exceptionMap.containsKey(value);
     }
 
 }
