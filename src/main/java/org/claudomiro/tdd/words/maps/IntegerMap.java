@@ -46,11 +46,6 @@ public abstract class IntegerMap {
     }
 
     public String wordRepresentation(Integer number) {
-/*
-        if(!map.containsKey(number)) {
-            throw new IllegalArgumentException(String.format("Number %d is not valid", number));
-        }
-*/
         return map.get(number);
     }
 

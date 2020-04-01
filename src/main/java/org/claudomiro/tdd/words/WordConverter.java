@@ -58,15 +58,15 @@ public class WordConverter {
         return convertMixedValue(tens, units);
     }
 
-    private String convertMixedValue(int dezenas, int unidades) {
+    private String convertMixedValue(int tens, int units) {
         List<String> result = new ArrayList<>();
-        if(tensMap.containsNumber(dezenas))
+        if(tensMap.containsNumber(tens))
         {
-            result.add(tensMap.wordRepresentation(dezenas));
+            result.add(tensMap.wordRepresentation(tens));
         }
-        if(unitMap.containsNumber(unidades))
+        if(unitMap.containsNumber(units))
         {
-                result.add(unitMap.wordRepresentation(unidades));
+                result.add(unitMap.wordRepresentation(units));
         }
         return String.join(" e ", result);
     }
