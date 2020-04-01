@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
-public class WordConverterTest
+public class IntegerConverterTest
 {
 
-    private WordConverter converter;
+    private IntegerConverter converter;
 
     @BeforeEach
     void setUp() {
-        converter = new WordConverter();
+        converter = new IntegerConverter();
     }
 
     @Test

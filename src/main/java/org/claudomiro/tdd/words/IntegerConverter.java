@@ -7,13 +7,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class WordConverter {
+public class IntegerConverter {
     private final Map<Integer, String> exceptionMap ;
 
     private final IntegerMap unitMap;
     private final IntegerMap tensMap;
 
-    public WordConverter() {
+    public IntegerConverter() {
         unitMap = IntegerMap.unitMap();
         tensMap = IntegerMap.tenfoldMap();
         exceptionMap = new HashMap<>();
