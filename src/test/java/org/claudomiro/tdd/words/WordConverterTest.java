@@ -1,5 +1,6 @@
 package org.claudomiro.tdd.words;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -41,5 +42,13 @@ public class WordConverterTest
         assertThat(converter.conv(25), equalTo("vinte e cinco"));
         assertThat(converter.conv(42), equalTo("quarenta e dois"));
         assertThat(converter.conv(98), equalTo("noventa e oito"));
+    }
+
+    @Test
+    public void whenInvalidValueThrowsException() {
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                converter.conv(-2));
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                converter.conv(100));
     }
 }
