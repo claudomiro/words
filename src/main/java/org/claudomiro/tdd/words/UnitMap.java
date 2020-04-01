@@ -1,12 +1,27 @@
 package org.claudomiro.tdd.words;
 
 public class UnitMap extends IntegerMap {
-
+    public static final int ONE = 1;
 
     public UnitMap() {
         super();
         initMap();
 
+    }
+
+    @Override
+    protected int base() {
+        return ONE;
+    }
+
+    @Override
+    public int realValue(int original) {
+        return original;
+    }
+
+    @Override
+    public int adjustedValue(int original) {
+        return original;
     }
 
     @Override
@@ -32,4 +47,5 @@ public class UnitMap extends IntegerMap {
         map.put(18, "dezoito");
         map.put(19, "dezenove");
     }
+
 }

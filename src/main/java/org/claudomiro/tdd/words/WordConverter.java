@@ -14,27 +14,33 @@ public class WordConverter {
         tensMap = new TensMap();
     }
 
-    public String conv(int integer)
+    public String conv(int value)
     {
-        int dezenas = integer /10 * 10;
-        if(dezenas == 10) {
-            dezenas = 0;
+        int dezenas = 0;
+        if(value > 19) {
+            dezenas = tensMap.adjustedValue(value);
         }
-        int unidades = integer -dezenas;
+        int unidades = value - tensMap.realValue(dezenas);
+        if(unitMap.containsNumber(value))
+        {
+            return unitMap.wordRepresentation(value);
+        }
+        if(tensMap.containsNumber(value) && unidades == 0)
+        {
+            return tensMap.wordRepresentation(dezenas);
+        }
+        return convertMixedValue(dezenas, unidades);
+    }
 
+    private String convertMixedValue(int dezenas, int unidades) {
         List<String> result = new ArrayList<>();
-        if(tensMap.contains(dezenas))
+        if(tensMap.containsNumber(tensMap.realValue(dezenas)))
         {
             result.add(tensMap.wordRepresentation(dezenas));
         }
-        if(unitMap.contains(unidades))
+        if(unitMap.containsNumber(unitMap.realValue(unidades)))
         {
-            final String wordRepresentation = unitMap.wordRepresentation(unidades);
-            if(result.isEmpty()) {
-                result.add(wordRepresentation);
-            } else if(unidades != 0) {
-                result.add(wordRepresentation);
-            }
+                result.add(unitMap.wordRepresentation(unidades));
         }
         return String.join(" e ", result);
     }

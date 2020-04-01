@@ -12,16 +12,23 @@ public abstract class IntegerMap {
         tens = new HashMap<>();
     }
 
+
     protected abstract void initMap();
 
+    protected abstract int base();
+    public abstract int realValue(int original);
+    public abstract int adjustedValue(int original);
+
     public String wordRepresentation(Integer number) {
+/*
         if(!map.containsKey(number)) {
             throw new IllegalArgumentException(String.format("Number %d is not valid", number));
         }
+*/
         return map.get(number);
     }
 
-    public boolean contains(Integer number) {
-        return map.containsKey(number);
+    public boolean containsNumber(Integer number) {
+        return map.containsKey(adjustedValue(number));
     }
 }
