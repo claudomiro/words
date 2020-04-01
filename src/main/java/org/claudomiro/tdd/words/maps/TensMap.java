@@ -1,30 +1,11 @@
-package org.claudomiro.tdd.words;
+package org.claudomiro.tdd.words.maps;
 
 public class TensMap extends IntegerMap
 {
-    public static final int TEN = 10;
-
-    public TensMap()
+    protected TensMap()
     {
         super();
         initMap();
-    }
-
-    @Override
-    protected int base() {
-        return TEN;
-    }
-
-    @Override
-    public int realValue(int original)
-    {
-        return original * TEN;
-    }
-
-    @Override
-    public int adjustedValue(int original)
-    {
-        return original / TEN;
     }
 
     @Override
