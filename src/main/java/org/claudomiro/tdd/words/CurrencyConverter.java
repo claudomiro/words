@@ -22,27 +22,21 @@ public class CurrencyConverter
 
         if(integerPart != 0)
         {
-            String stringCurrencyPart = integerConverter.conv(integerPart) + SPACE ;
-            if(integerPart == 1) {
-                stringCurrencyPart += CURRENCY_SINGULAR;
-            } else
-            {
-                stringCurrencyPart += CURRENCY_PLURAL;
-            }
-            resultList.add(stringCurrencyPart);
+            resultList.add(stringPart(integerPart, CURRENCY_SINGULAR, CURRENCY_PLURAL));
         }
         if(centsPart != 0)
         {
-            String stringCentsPart = integerConverter.conv(centsPart) + SPACE ;
-            if(centsPart == 1)
-            {
-                stringCentsPart += CENT_SINGULAR;
-            } else
-            {
-                stringCentsPart += CENT_PLURAL;
-            }
-            resultList.add(stringCentsPart);
+            resultList.add(stringPart(centsPart, CENT_SINGULAR, CENT_PLURAL));
         }
         return String.join(SPACE + CONECTOR + SPACE, resultList);
     }
+
+    private String stringPart(int integerNumber, String singularWord, String pluralWord) {
+        String stringPart = integerConverter.conv(integerNumber) + SPACE;
+        if (integerNumber == 1) {
+            return stringPart + singularWord;
+        }
+        return stringPart + pluralWord;
+    }
+
 }
