@@ -54,4 +54,11 @@ public class CurrencyConverterTest
         assertThat(conversor.conv(1.00), equalTo("um real"));
         assertThat(conversor.conv(0.01), equalTo("um centavo"));
     }
+
+    @Test
+    public void whenFractionOfCentsIsPassedReturnTheTruncatedValue()
+    {
+        assertThat(conversor.conv(1.031), equalTo("um real e três centavos"));
+        assertThat(conversor.conv(1.039), equalTo("um real e três centavos"));
+    }
 }
