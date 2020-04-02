@@ -1,9 +1,9 @@
 package org.claudomiro.tdd.words;
 
-public class PortugueseConstants {
-    public static final String CURRENCY = "reais";
-    public static final String CENTS = "centavos";
+interface PortugueseConstants {
+    static final String CURRENCY = "reais";
+    static final String CENTS = "centavos";
 
-    public static final String SPACE = " ";
-    public static final double ONE_HUNDRED = 100.00;
+    static final String SPACE = " ";
+    static final double ONE_HUNDRED = 100.00;
 }

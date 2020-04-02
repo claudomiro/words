@@ -12,12 +12,12 @@ public class CurrencyConverter
 
     public String conv(double currencyValue)
     {
-        int integerValue = (int) currencyValue;
-        int centsValue = (int) ((currencyValue - integerValue) * ONE_HUNDRED);
+        int integerPart = (int) currencyValue;
+        int centsPart = (int) ((currencyValue - integerPart) * ONE_HUNDRED);
 
-        if(centsValue == 0) {
-            return integerConverter.conv(integerValue) + SPACE + CURRENCY;
+        if(centsPart == 0) {
+            return integerConverter.conv(integerPart) + SPACE + CURRENCY;
         }
-        return integerConverter.conv(centsValue) + SPACE + CENTS;
+        return integerConverter.conv(centsPart) + SPACE + CENTS;
     }
 }
