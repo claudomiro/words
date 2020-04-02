@@ -18,6 +18,10 @@ public class CurrencyConverter
 
     public String conv(double currencyValue)
     {
+        if(currencyValue < 0.00 || currencyValue > 99.99999999999)
+        {
+            throw new IllegalArgumentException(String.format("Don't know how to convert '%f'", currencyValue));
+        }
         int currencyInCents = (int) (currencyValue * DOUBLE_ONE_HUNDRED);
         int integerPart = currencyInCents / INT_ONE_HUNDRED;
         int centsPart = currencyInCents - (integerPart * INT_ONE_HUNDRED);
