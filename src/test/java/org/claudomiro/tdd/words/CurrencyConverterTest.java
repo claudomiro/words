@@ -47,4 +47,11 @@ public class CurrencyConverterTest
         assertThat(conversor.conv(13.45), equalTo("treze reais e quarenta e cinco centavos"));
         assertThat(conversor.conv(97.03), equalTo("noventa e sete reais e três centavos"));
     }
+
+    @Test
+    public void whenSingularPartCorrectlyReturnWords()
+    {
+        assertThat(conversor.conv(1.00), equalTo("um real"));
+        assertThat(conversor.conv(0.01), equalTo("um centavo"));
+    }
 }
