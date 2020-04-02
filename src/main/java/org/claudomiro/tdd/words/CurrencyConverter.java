@@ -15,11 +15,11 @@ public class CurrencyConverter
 
     public String conv(double currencyValue)
     {
-        List<String> resultList = new ArrayList<>();
-        int integerPart = (int) currencyValue;
-        final double doubleValue = currencyValue - (double) integerPart;
-        int centsPart = (int) Math.round(doubleValue * ONE_HUNDRED);
+        int currencyInCents = (int) (currencyValue * ONE_HUNDRED);
+        int integerPart = currencyInCents / 100;
+        int centsPart = currencyInCents - (integerPart * 100);
 
+        List<String> resultList = new ArrayList<>();
         if(integerPart != 0)
         {
             resultList.add(stringPart(integerPart, CURRENCY_SINGULAR, CURRENCY_PLURAL));
