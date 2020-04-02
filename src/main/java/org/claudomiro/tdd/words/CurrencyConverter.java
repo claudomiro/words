@@ -7,6 +7,9 @@ import static org.claudomiro.tdd.words.PortugueseConstants.*;
 
 public class CurrencyConverter
 {
+    private static final double DOUBLE_ONE_HUNDRED = 100.00;
+    private  static final int INT_ONE_HUNDRED = 100;
+
     private final IntegerConverter integerConverter;
 
     public CurrencyConverter() {
@@ -15,9 +18,9 @@ public class CurrencyConverter
 
     public String conv(double currencyValue)
     {
-        int currencyInCents = (int) (currencyValue * ONE_HUNDRED);
-        int integerPart = currencyInCents / 100;
-        int centsPart = currencyInCents - (integerPart * 100);
+        int currencyInCents = (int) (currencyValue * DOUBLE_ONE_HUNDRED);
+        int integerPart = currencyInCents / INT_ONE_HUNDRED;
+        int centsPart = currencyInCents - (integerPart * INT_ONE_HUNDRED);
 
         List<String> resultList = new ArrayList<>();
         if(integerPart != 0)
