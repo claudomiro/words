@@ -30,12 +30,21 @@ public class CurrencyConverterTest
     }
 
     @Test
-    public void whenJustCentsReturnWords() {
+    public void whenJustCentsReturnWords()
+    {
         assertThat(conversor.conv(0.02), equalTo("dois centavos"));
         assertThat(conversor.conv(0.03), equalTo("três centavos"));
         assertThat(conversor.conv(0.10), equalTo("dez centavos"));
         assertThat(conversor.conv(0.30), equalTo("trinta centavos"));
         assertThat(conversor.conv(0.55), equalTo("cinquenta e cinco centavos"));
         assertThat(conversor.conv(0.97), equalTo("noventa e sete centavos"));
+    }
+
+    @Test
+    public void whenMixedValueRetunWords()
+    {
+        assertThat(conversor.conv(2.02), equalTo("dois reais e dois centavos"));
+        assertThat(conversor.conv(13.45), equalTo("treze reais e quarenta e cinco centavos"));
+        assertThat(conversor.conv(97.03), equalTo("noventa e sete reais e três centavos"));
     }
 }
