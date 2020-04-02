@@ -9,6 +9,5 @@ interface PortugueseConstants {
 
     String CONECTOR = "e";
     String SPACE = " ";
-    double ONE_HUNDRED = 100.00;
 
 }
